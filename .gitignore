@@ -1,0 +1,13 @@
+
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+*.tmp
+*.log
+*.apk
+*.aab
+.env
+.env.*
+**/secrets.json

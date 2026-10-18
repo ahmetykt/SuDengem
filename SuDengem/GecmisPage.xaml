@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SuDengem.GecmisPage"
+    BackgroundColor="#EDF8FC"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,30" Spacing="15">
+
+            <Label Text="SuDengem" FontSize="32"
+                   FontAttributes="Bold" TextColor="#1686C9"
+                   HorizontalOptions="Center" />
+
+            <Label Text="Su tüketim geçmişin" FontSize="20"
+                   FontAttributes="Bold" TextColor="#183B56" />
+
+            <Label Text="Son 7 gündeki su tüketimini burada görebilirsin."
+                   FontSize="14" TextColor="#62869A" />
+
+            <VerticalStackLayout x:Name="HistoryLayout"
+                                 Spacing="12" />
+
+            <Button Text="Ana sayfaya dön"
+                    BackgroundColor="#1686C9" TextColor="White"
+                    CornerRadius="12" HeightRequest="50"
+                    Clicked="OnBackClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

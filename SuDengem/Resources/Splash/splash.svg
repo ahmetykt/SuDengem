@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#B5F7FF"/>
+      <stop offset="0.38" stop-color="#45CAFF"/>
+      <stop offset="1" stop-color="#0865F6"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#009BFF"/>
+      <stop offset="1" stop-color="#0049CE"/>
+    </linearGradient>
+    <linearGradient id="badge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#D5EEFF"/>
+    </linearGradient>
+  </defs>
+  <!-- Outer droplet: no solid background so MAUI splash color can show through -->
+  <path d="M126 33 C109 61 69 102 65 142 C61 182 89 213 129 213 C169 213 196 182 191 142 C186 104 146 59 126 33Z" fill="url(#water)" stroke="#F4FFFF" stroke-width="6"/>
+  <path d="M70 144 C94 135 107 160 129 156 C155 152 170 130 187 143 C186 183 164 208 128 208 C94 208 69 181 70 144Z" fill="url(#wave)"/>
+  <path d="M74 149 C93 139 111 165 132 160 C153 155 171 136 184 145" fill="none" stroke="#8CF5FF" stroke-width="5" stroke-linecap="round" opacity="0.9"/>
+  <path d="M120 65 C97 97 86 112 82 132" fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" opacity="0.78"/>
+  <ellipse cx="105" cy="101" rx="5" ry="10" fill="#FFFFFF" opacity="0.88" transform="rotate(30 105 101)"/>
+  <circle cx="99" cy="182" r="5.5" fill="#BDF6FF" opacity="0.88"/>
+  <circle cx="115" cy="191" r="3" fill="#BDF6FF" opacity="0.88"/>
+  <circle cx="146" cy="179" r="3.5" fill="#BDF6FF" opacity="0.88"/>
+  <!-- Reminder clock -->
+  <circle cx="172" cy="177" r="30" fill="#1058D1" opacity="0.25"/>
+  <circle cx="168" cy="172" r="29" fill="url(#badge)" stroke="#FFFFFF" stroke-width="4"/>
+  <path d="M168 154 V172 L182 179" fill="none" stroke="#0A62E8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M203 146 Q212 155 211 165" fill="none" stroke="#0B8BF5" stroke-width="5" stroke-linecap="round"/>
+  <path d="M210 137 Q223 150 223 166" fill="none" stroke="#0B8BF5" stroke-width="4" stroke-linecap="round" opacity="0.65"/>
+  <path d="M185 99 C189 90 194 84 201 85 C209 89 207 100 195 113 C189 119 186 110 185 99Z" fill="#4AC8FF" stroke="#E7FDFF" stroke-width="2"/>
+</svg>

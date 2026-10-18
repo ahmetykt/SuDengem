@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="SuDengem.TakipPage"
+    BackgroundColor="#EDF8FC"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,25" Spacing="15">
+
+            <Label Text="SuDengem" FontSize="30"
+                   FontAttributes="Bold" TextColor="#1686C9"
+                   HorizontalOptions="Center" />
+
+            <Label x:Name="WelcomeLabel" FontSize="20"
+                   FontAttributes="Bold" TextColor="#183B56" />
+
+            <!-- Günlük su bilgileri -->
+            <Border BackgroundColor="White" StrokeThickness="0"
+                    StrokeShape="RoundRectangle 18" Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Bugün içtiğin su" TextColor="#62869A"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="DrankLabel" FontSize="30"
+                           FontAttributes="Bold" TextColor="#1686C9"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="GoalLabel" TextColor="#183B56"
+                           HorizontalOptions="Center" />
+
+                    <ProgressBar x:Name="WaterProgress"
+                                 ProgressColor="#32B9C6"
+                                 BackgroundColor="#D9EFF8" />
+
+                    <Label x:Name="ProgressLabel" TextColor="#1686C9"
+                           HorizontalOptions="Center" />
+
+                    <Label x:Name="RemainingLabel" TextColor="#62869A"
+                           HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Su ekleme -->
+            <Border BackgroundColor="White" StrokeThickness="0"
+                    StrokeShape="RoundRectangle 18" Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="İçtiğin suyu ekle" FontSize="20"
+                           FontAttributes="Bold" TextColor="#183B56" />
+
+                    <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto"
+                          ColumnSpacing="10" RowSpacing="10">
+
+                        <Button x:Name="SmallButton"
+                                Text="Küçük bardak 200 ml"
+                                CommandParameter="200"
+                                Grid.Row="0" Grid.Column="0"
+                                Clicked="OnChooseClicked" />
+
+                        <Button x:Name="LargeButton"
+                                Text="Büyük bardak 250 ml"
+                                CommandParameter="250"
+                                Grid.Row="0" Grid.Column="1"
+                                Clicked="OnChooseClicked" />
+
+                        <Button x:Name="BottleButton"
+                                Text="Şişe 500 ml"
+                                CommandParameter="500"
+                                Grid.Row="1" Grid.Column="0"
+                                Clicked="OnChooseClicked" />
+
+                        <Button x:Name="CustomButton"
+                                Text="Özel miktar"
+                                CommandParameter="0"
+                                Grid.Row="1" Grid.Column="1"
+                                Clicked="OnChooseClicked" />
+                    </Grid>
+
+                    <Slider x:Name="AmountSlider"
+                            Minimum="100" Maximum="2000" Value="350"
+                            IsVisible="False"
+                            MinimumTrackColor="#32B9C6"
+                            ThumbColor="#1686C9"
+                            ValueChanged="OnSliderChanged" />
+
+                    <Label x:Name="AmountLabel" TextColor="#1686C9"
+                           HorizontalOptions="Center" />
+
+                    <Label Text="Kaç adet?" TextColor="#183B56" />
+
+                    <Stepper x:Name="WaterStepper"
+                             Minimum="1" Maximum="10" Value="1"
+                             HorizontalOptions="Center"
+                             ValueChanged="OnStepperChanged" />
+
+                    <Label x:Name="TotalLabel" TextColor="#183B56"
+                           HorizontalOptions="Center" />
+
+                    <Button Text="Suyu ekle"
+                            BackgroundColor="#1686C9" TextColor="White"
+                            CornerRadius="12" HeightRequest="50"
+                            Clicked="OnAddClicked" />
+
+                    <Button x:Name="UndoButton" Text="Son eklemeyi geri al"
+                            BackgroundColor="#EAF6FC" TextColor="#1686C9"
+                            CornerRadius="12" Clicked="OnUndoClicked" />
+
+                    <Button Text="Bugünkü kaydı sıfırla"
+                            BackgroundColor="#F1F6F9" TextColor="#C04A4A"
+                            CornerRadius="12" Clicked="OnResetClicked" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Hatırlatıcı -->
+            <Border BackgroundColor="White" StrokeThickness="0"
+                    StrokeShape="RoundRectangle 18" Padding="20">
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="Su içme hatırlatıcısı" FontSize="18"
+                           FontAttributes="Bold" TextColor="#183B56" />
+
+                    <Label Text="Hatırlatma aralığı seç"
+                           FontSize="14" TextColor="#183B56" />
+
+                    <Picker x:Name="ReminderPicker"
+                            Title="Bir seçenek seç"
+                            BackgroundColor="#EAF6FC"
+                            TextColor="#183B56" TitleColor="#62869A"
+                            HeightRequest="50" HorizontalOptions="Fill"
+                            SelectedIndexChanged="OnReminderChanged">
+
+                        <Picker.Items>
+                            <x:String>Kapalı</x:String>
+                            <x:String>60 dakikada bir</x:String>
+                            <x:String>90 dakikada bir</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <Button Text="Test bildirimi gönder"
+                            BackgroundColor="#EAF6FC" TextColor="#1686C9"
+                            CornerRadius="12"
+                            Clicked="OnTestNotificationClicked" />
+
+                    <Label Text="Hatırlatma bildirimleri yaklaşık zamanlarda gönderilir."
+                           FontSize="12" TextColor="#62869A" />
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Diğer sayfalar -->
+            <Button Text="Su geçmişim"
+                    BackgroundColor="#1686C9" TextColor="White"
+                    CornerRadius="12" Clicked="OnHistoryClicked" />
+
+            <Button Text="Kullanıcı değiştir"
+                    BackgroundColor="#EAF6FC" TextColor="#1686C9"
+                    CornerRadius="12" Clicked="OnSwitchClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
